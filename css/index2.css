@@ -1,0 +1,369 @@
+*,
+*::after,
+*::before { 
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    content: "";
+}
+
+/* Stile base per html e body */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 60px 20px 20px 20px;
+}
+
+select {
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 6px;
+    text-align: justify;
+}
+
+/* Menu Hamburger */
+nav.hamburger-menu {
+    position: fixed;
+    background-color: #00d6f7;
+    color: #ffffff;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    z-index: 100;
+}
+
+nav.hamburger-menu .logo {
+    margin: 0 70px 0 40px;
+}
+
+nav.hamburger-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav.hamburger-menu li {
+    display: inline;
+    margin: 0 40px 0 0;
+}
+
+nav.hamburger-menu a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav.hamburger-menu a:hover {
+    color: #f5e505;
+    text-decoration: underline;
+}
+
+@media all and (max-width: 768px) {
+    /* La label che disegna le 3 linee */
+    nav.hamburger-menu .label-controllo {
+        position: fixed;
+        top: 18px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    /* Label chiusa del menu */
+    nav.hamburger-menu .label-controlloChiuso {
+        display: none;
+        position: fixed;
+        top: 18px;
+        left: 20px;
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    nav.hamburger-menu .label-controllo>span,
+    nav.hamburger-menu .label-controllo>span::before,
+    nav.hamburger-menu .label-controllo>span::after {
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: #ffffff;
+    }
+
+    nav.hamburger-menu .label-controllo>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    nav.hamburger-menu .label-controllo>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    /* Stile per la label di chiusura */
+    nav.hamburger-menu .label-controlloChiuso>span,
+    nav.hamburger-menu .label-controlloChiuso>span::before,
+    nav.hamburger-menu .label-controlloChiuso>span::after {
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: #ffffff;
+    }
+
+    nav.hamburger-menu .label-controlloChiuso>span::before {
+        content: '';
+        top: -8px;
+    }
+
+    nav.hamburger-menu .label-controlloChiuso>span::after {
+        content: '';
+        top: 8px;
+    }
+
+    /* Stile del menu */
+    nav.hamburger-menu #menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 90%;
+        height: 100%;
+        padding: 80px 0;
+        background-color: #01aec5;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+        transition-duration: .25s;
+    }
+
+    /* Voci del menu */
+    nav.hamburger-menu .vociMenu {
+        display: block;
+        padding: 12px 24px;
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: 600;
+        transition-duration: .25s;
+    }
+
+    /* Hover sulle voci del menu */
+    nav.hamburger-menu .vociMenu:hover {
+        background-color: #ff8dbb;
+        color: #000000;
+    }
+
+    /* Quando il menu è attivo */
+    nav.hamburger-menu:target .label-controllo {
+        display: none;
+    }
+
+    nav.hamburger-menu:target .label-controlloChiuso {
+        display: block;
+    }
+
+    nav.hamburger-menu:target .label-controlloChiuso>span {
+        transform: rotate(45deg);
+    }
+
+    nav.hamburger-menu:target .label-controlloChiuso>span::before {
+        top: 0;
+        transform: rotate(0deg);
+    }
+
+    nav.hamburger-menu:target .label-controlloChiuso>span::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    nav.hamburger-menu:target #menu {
+        left: 0 !important;
+    }
+}
+
+/* Stili per la cover */
+.cover {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cover-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Se vuoi che l'immagine si adatti mantenendo le proporzioni */
+}
+
+.cover__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #610b0b;
+  text-align: center;
+}
+
+.homepage {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage .content {
+  width: 100%;
+  display: flex;
+  height: 85%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.homepage .content h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.homepage .content a {
+  color: #000;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background: #fff;
+  text-decoration: none;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.homepage .content a:hover {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.content a {
+  color: #000;
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin: 0 10px;
+  padding: 10px 30px;
+  border-radius: 5px;
+  background: #fff;
+  border: 2px solid #fff;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.content a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Sezioni */
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+section h2 {
+  font-size: 2rem;
+}
+
+section > p {
+  text-align: center;
+}
+
+section .cards {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin-top: 50px;
+  padding: 0 10px;
+  justify-content: space-between;
+}
+
+section.about {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.about .company-info {
+  margin-top: 30px;
+}
+
+.about h3 {
+  margin: 30px 0 10px;
+}
+
+.about .team {
+  text-align: left;
+  width: 100%;
+}
+
+.about .team ul {
+  padding-left: 20px;
+}
+
+section .cards .card {
+  background: #fff;
+  padding: 40px 15px;
+  list-style: none;
+  border-radius: 5px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.04);
+  margin-bottom: 40px;
+  width: calc(100% / 3 - 30px);
+  text-align: center;
+}
+
+/* Regola per schermi più piccoli */
+@media all and (max-width: 768px) {
+    section .cards {
+        justify-content: center; /* Centra le card */
+    }
+
+    section .cards .card {
+        width: calc(100% / 2 - 20px); /* Riduce a 2 colonne */
+        margin-bottom: 20px; /* Spaziatura tra le card */
+    }
+}
+
+@media all and (max-width: 480px) {
+    section .cards .card {
+        width: 100%; /* Una sola colonna su schermi molto piccoli */
+    }
+}
+
+section .cards .card img {
+  height: 120px;
+  margin-bottom: 30px;
+}
+
+section .cards .card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+section .cards .card p {
+  font-size: 1rem;
+   line-height: 1.6; /* Aggiungi interlinea per migliorare la leggibilità */
+}
